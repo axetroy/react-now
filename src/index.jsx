@@ -1,9 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 
 class Now extends Component {
+  static PropTypes = {
+    interval: PropTypes.number
+  };
+
   state = {
     date: new Date()
   };
+
+  clearInterval() {
+    if (this.__interval_id__ !== void 0) {
+      clearInterval(this.__interval_id__);
+    }
+  }
 
   componentWillMount() {
     this.__interval_id__ = setInterval(
@@ -13,9 +23,7 @@ class Now extends Component {
   }
 
   componentWillUnmount() {
-    if (this.__interval_id__ !== void 0) {
-      clearInterval(this.__interval_id__);
-    }
+    this.clearInterval();
   }
 
   timer() {
@@ -23,15 +31,24 @@ class Now extends Component {
   }
 
   render() {
-    const render = this.props.children;
-    return typeof render === 'function'
-      ? render.call(this, this.state.date)
-      : '';
+    let render = this.props.children;
+
+    if (typeof render !== 'function' || Array.isArray(render)) {
+      this.clearInterval();
+      throw new Error(
+        `react-now component's child must contain only one function`
+      );
+    }
+
+    const reactElement = render.call(this, this.state.date);
+
+    if (!React.isValidElement(reactElement)) {
+      this.clearInterval();
+      throw new Error(`react-now: Function not return a valid react element`);
+    }
+
+    return reactElement;
   }
 }
-
-Now.PropTypes = {
-  interval: PropTypes.number
-};
 
 export default Now;
