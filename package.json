@@ -1,6 +1,6 @@
 {
   "name": "@axetroy/react-now",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "react component for rend the time now. update in every seconds",
   "main": "index.js",
   "scripts": {
