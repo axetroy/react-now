@@ -1,6 +1,8 @@
 # react-now
 
-react component for rend the time now.
+[![Greenkeeper badge](https://badges.greenkeeper.io/axetroy/react-now.svg)](https://greenkeeper.io/)
+
+react component for rend the time now. update in every seconds
 
 ## Install
 
