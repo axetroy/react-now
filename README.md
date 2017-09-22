@@ -15,7 +15,7 @@ yarn add @axetroy/react-now
 ```jsx harmony
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Now from '@axetrpy/react-now';
+import Now from '@axetroy/react-now';
 
 class App extends Component {
   render() {
@@ -39,6 +39,8 @@ render(<App />, element);
 - interval: number
 
 ref: setInterval(function, interval)
+
+default: 1000
     
 ## Run the Demo
 
