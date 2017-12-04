@@ -30,7 +30,7 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "rimraf": "^2.5.0",
-    "webpack": "^2.4.1",
+    "webpack": "^3.10.0",
     "webpack-dev-server": "^2.4.5"
   }
 }
