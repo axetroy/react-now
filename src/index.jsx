@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 
 class Now extends Component {
-  static PropTypes = {
+  static propTypes = {
     interval: PropTypes.number
   };
 
